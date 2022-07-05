@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yjpn.top">
-  <title>jenkins基础+Gitlab代理自动构建 | SpiderMan</title>
+  <title>Archives: 2022/7 | SpiderMan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jenkins基础+Gitlab代理自动构建">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jenkins基础+Gitlab代理自动构建">
-<meta property="og:url" content="http://yjpn.top/2022/05/03/jenkins%E5%9F%BA%E7%A1%80-Gitlab%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/index.html">
+  <meta name="description" content="我的目标年薪百万!!!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SpiderMan">
+<meta property="og:url" content="http://yjpn.top/archives/2022/07/index.html">
 <meta property="og:site_name" content="SpiderMan">
-<meta property="og:description" content="jenkins基础+Gitlab代理自动构建">
+<meta property="og:description" content="我的目标年薪百万!!!">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-12T08:11:21.589Z">
 <meta property="article:author" content="SpiderMan">
-<meta property="article:tag" content="linux服务">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SpiderMan" type="application/atom+xml">
@@ -155,295 +152,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jenkins基础-Gitlab代理自动构建" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      jenkins基础+Gitlab代理自动构建
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/07/01/python%E5%87%BD%E6%95%B0%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2022-07-01T08:56:45.647Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/07/01/python%E5%87%BD%E6%95%B0%E7%BC%96%E7%A8%8B/">python函数编程</a>
     </h1>
   
 
-        
-        <a href="/2022/05/03/jenkins%E5%9F%BA%E7%A1%80-Gitlab%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2022-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jenkins基础-Gitlab代理自动构建"><a href="#jenkins基础-Gitlab代理自动构建" class="headerlink" title="jenkins基础+Gitlab代理自动构建"></a>jenkins基础+Gitlab代理自动构建</h1><span id="more"></span>
-
-<h2 id="jenkins基础"><a href="#jenkins基础" class="headerlink" title="jenkins基础"></a>jenkins基础</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">一．Jenkins是什么？</span><br><span class="line">Jenkins是一个可扩展的持续集成引擎。</span><br><span class="line">Jenkins是一个CI工具。它可以根据设定持续定期编译，运行相应代码；运行UT或集成测试；将运行结果发送至邮件，或展示成报告。</span><br><span class="line">主要用于：</span><br><span class="line">持续、自动地构建/测试软件项目。</span><br><span class="line">监控一些定时执行的任务。</span><br><span class="line">主要目标：</span><br><span class="line">Jenkins的主要目标是监控软件开发流程，快速显示问题。所以能保证开发人员以及相关人员省时省力提高开发效率。</span><br><span class="line">Jenkins拥有的特性包括：</span><br><span class="line">易于安装-只要把jenkins.war部署到servlet容器，不需要数据库支持。</span><br><span class="line">易于配置-所有配置都是通过其提供的web界面实现。</span><br><span class="line">集成RSS/E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知。</span><br><span class="line">生成JUnit/TestNG测试报告。</span><br><span class="line">分布式构建支持Jenkins能够让多台计算机一起构建/测试。</span><br><span class="line">文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等。</span><br><span class="line">插件支持:支持扩展插件，你可以开发适合自己团队使用的工具。</span><br></pre></td></tr></table></figure>
-
-<h2 id="首先部署gitloab"><a href="#首先部署gitloab" class="headerlink" title="首先部署gitloab"></a>首先部署gitloab</h2><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">需要安装包</span><br><span class="line">gitlab-ce-11.9.8-ce.0.el6.x86_64.rpm</span><br><span class="line">安装</span><br><span class="line">[root@localhost ~]<span class="comment"># rpm -ivh gitlab-ce-11.9.8-ce.0.el6.x86_64.rpm </span></span><br><span class="line">初始化</span><br><span class="line">gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/gitlab/gitlab.rb </span></span><br><span class="line"><span class="comment">##! For more details on configuring external_url see:</span></span><br><span class="line"><span class="comment">##! https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab</span></span><br><span class="line">external_url <span class="string">&#x27;http://192.168.10.128&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Roles for multi-instance GitLab</span></span><br><span class="line">再次初始化</span><br><span class="line">gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
-
-<p>a</p>
-<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>nginx安装脚本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#查看是否有这个包，有就解压，没有就退出脚本并给提示</span></span><br><span class="line">[ -f nginx-1.14.0.tar.gz ] &amp;&amp; tar zxf  nginx-1.14.0.tar.gz || <span class="built_in">echo</span> <span class="string">&quot;没有nginx-1.14.0.tar.gz这个包&quot;</span> <span class="built_in">exit</span> 0</span><br><span class="line"><span class="built_in">cd</span> nginx-1.14.0</span><br><span class="line"><span class="comment">#yum安装编译nginx依赖</span></span><br><span class="line">yum -y install pcre-devel openssl-devel &amp;&gt; /dev/null</span><br><span class="line"><span class="comment">#编译</span></span><br><span class="line">./configure --prefix=/usr/local/nginx --user=nginx --group=nginx --with-http_ssl_module &amp;&gt; /dev/null</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">make &amp;&amp; make install &amp;&gt; /dev/null</span><br><span class="line"><span class="comment">#做软连接</span></span><br><span class="line"><span class="built_in">ln</span> -s  /usr/local/nginx/sbin/nginx /usr/local/sbin/</span><br><span class="line"><span class="comment">#创建nginx并放到/sbin/nologin解释器中 </span></span><br><span class="line">useradd nginx -s /sbin/nologin -M</span><br><span class="line"><span class="comment">#启动 nginx</span></span><br><span class="line">nginx</span><br><span class="line"><span class="comment">#检测端口</span></span><br><span class="line">netstat -anput | grep nginx</span><br></pre></td></tr></table></figure>
-
-<h2 id="接下载安装git分布式控制系统"><a href="#接下载安装git分布式控制系统" class="headerlink" title="接下载安装git分布式控制系统"></a>接下载安装git分布式控制系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum -y install git</span></span><br><span class="line">1.浏览器访问服务器（192.168.10.128），第一次访问会提示设置密码，密码最小8位长度</span><br><span class="line">2.默认登录用户名是:root</span><br><span class="line">3.成功登录后，进行创建项目：小钳子--new project--project name--create project</span><br><span class="line">4.根据提示我们需要创建密钥对，切换终端进行创建ssh密钥：默认回车就行</span><br><span class="line">5.查看公钥</span><br><span class="line">[root@localhost ~]<span class="comment"># cat /root/.ssh/id_rsa.pub </span></span><br><span class="line">6.切换web页面：点击：add an ssh key--将公钥拷贝进去，名称可以随便写--add key</span><br><span class="line">7.回到刚刚创建的项目中：projects--your projects--点击你创建的仓库--根据提示，切换终端进行可控仓库：</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># git config --global user.name &quot;admin&quot;</span></span><br><span class="line">[root@localhost ~]<span class="comment"># git config --global user.email &quot;admin@admin.com&quot;</span></span><br><span class="line">[root@localhost ~]<span class="comment"># git clone git@192.168.10.128:root/yjp.git</span></span><br><span class="line">正克隆到 <span class="string">&#x27;yjp&#x27;</span>...</span><br><span class="line">The authenticity of host <span class="string">&#x27;192.168.10.128 (192.168.10.128)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">ECDSA key fingerprint is d3:34:18:89:73:c8:d3:47:e4:7d:36:c7:a3:62:17:b6.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? yes</span></span><br><span class="line"><span class="string">Warning: Permanently added &#x27;</span>192.168.10.128<span class="string">&#x27; (ECDSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">warning: 您似乎克隆了一个空版本库。</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为创建的时候没有勾选初始化仓库，所以需要我们手动创建。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd yjp/</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># vim index.html</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># cat index.html </span></span><br><span class="line">&lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">[root@localhost yjp]<span class="comment"># git add index.html</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># git commit -m &quot;1&quot;</span></span><br><span class="line">[master（根提交） 16377f2] 1</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 index.html</span><br></pre></td></tr></table></figure>
-
-<p>然后将本地写的代码推送给远程库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost yjp]<span class="comment"># git push -u origin master </span></span><br><span class="line">Counting objects: 3, <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (3/3), 213 bytes | 0 bytes/s, <span class="keyword">done</span>.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To git@192.168.10.128:root/yjp.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">分支 master 设置为跟踪来自 origin 的远程分支 master。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">进入浏览器刷新</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="部署jenkins，实现自动化运维"><a href="#部署jenkins，实现自动化运维" class="headerlink" title="部署jenkins，实现自动化运维"></a>部署jenkins，实现自动化运维</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># rpm -ivh jenkins-2.172-1.1.noarch.rpm </span></span><br></pre></td></tr></table></figure>
-
-<p><strong>修改配置文件，将Jenkins的端口修改，默认8080，因为跟gitlab冲突，所以我们这里修改成8081.</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/sysconfig/jenkins </span></span><br><span class="line"><span class="comment"># Set to -1 to disable</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">JENKINS_PORT=<span class="string">&quot;8081&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Type:        string</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>因为使用离线安装，所以我们需要断网，解压离线安装需要的文件：jenkins-plugins.tar.gz</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tar zxf jenkins-plugins.tar.gz </span></span><br><span class="line">[root@localhost ~]<span class="comment"># mv plugins/ /var/lib/jenkins/</span></span><br><span class="line">[root@localhost ~]<span class="comment"># /etc/init.d/jenkins start</span></span><br><span class="line">Starting jenkins (via systemctl):                          [  确定  ]</span><br><span class="line">然后去浏览器访问192.168.10.128：8081</span><br><span class="line">根据提示将密码粘贴</span><br><span class="line">[root@localhost ~]<span class="comment"># cat /var/lib/jenkins/secrets/initialAdminPassword </span></span><br><span class="line"></span><br><span class="line">跳过插件安装</span><br><span class="line">创建第一个管理员用户</span><br><span class="line">用户名：admin</span><br><span class="line">全名：admin</span><br><span class="line">邮件地址：admin@admin.com</span><br><span class="line">下一步即可，至次安装完成</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>进入页面后，可以联网了，开始创建项目，使用Jenkins拉取Gitlab的仓库代码</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新建任务--构建自由风格的软件--web-demo--源码管理--git：url：git@192.168.10.128:root/yjp.git--添加--jenkins:</span><br><span class="line">类型--ssh user...--id：1--描述：1--username：root--去终端：<span class="built_in">cat</span> /root/.ssh/id_rsa--浏览器中private key enter directly 输入密钥--passphrase（终端密码）--添加--credentials（选择root，发现就不报错了）--源码库浏览器--gitlab--url：http://192.168.10.128/root/yjp.git--version:11.9--保存</span><br></pre></td></tr></table></figure>
-
-<p><strong>点击“立即构建”查看仓库创建的详细信息：控制台输出</strong></p>
-<p><strong>切换终端，进入Jenkins，查看是否获取到仓库项目信息：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	[root@localhost ~]<span class="comment"># cd /var/lib/jenkins/workspace/</span></span><br><span class="line">[root@localhost workspace]<span class="comment"># ls</span></span><br><span class="line">web-demo  web-demo@tmp</span><br><span class="line">[root@localhost workspace]<span class="comment"># cd web-demo</span></span><br><span class="line">[root@localhost web-demo]<span class="comment"># ls</span></span><br><span class="line">index.htm</span><br><span class="line">[root@localhost web-demo]<span class="comment"># cat index.html </span></span><br><span class="line">&lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="接下来部署gitlab代理自动构建"><a href="#接下来部署gitlab代理自动构建" class="headerlink" title="接下来部署gitlab代理自动构建"></a>接下来部署gitlab代理自动构建</h2><p><strong>首先先下载插件，我这里是下载好插件了，直接上传就好:</strong></p>
-<p><strong>系统管理–系统设置–插件管理–高级–上传插件：上传的顺序：gitlab-oauth、gitlab-plugin、windows-slaves、ruby-runtime、gitlab-hook</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">系统管理--插件管理--高级--选择文件--依次上传</span><br></pre></td></tr></table></figure>
-
-<p><strong>上传完成后，回到插件管理–高级中：更改升级的站点源，改成国内的Jenkins源：</strong></p>
-<p><strong>百度搜索清华大学Jenkins地址就可以获取：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json"><strong>https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</strong></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">升级站点：https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json   --提交--立即获取</span><br></pre></td></tr></table></figure>
-
-<p><strong>接下继续配置：</strong></p>
-<p><strong>系统管理–全局安全设置–授权策略–取消勾选“防止跨站点请求伪造”、勾选“匿名用户具有可读权限”</strong></p>
-<p><strong>系统管理–系统设置–取消勾选Enable authentication for</strong> <strong>‘</strong><strong>/project****’</strong> <strong>end-point</strong></p>
-<p><strong>web-demo–配置–构建触发器—-勾选“触发远程构建”–构建身份令牌（在终端执行“openssl rand -hex 10”）生成令牌。</strong></p>
-<p><strong>勾选****Build when a change is pushed to GitLab. GitLab webhook URL:</strong> <strong>—–保存</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># openssl rand -hex 10</span></span><br><span class="line">396ce000f4b4cc4978c0</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>回到gitlab的web页面–点击小钳子–setting–Network–Outbound requests–勾选****Allow requests to the local network from hooks and services</strong></p>
-<p><strong>点击project–your project–yjp–setting–Integrations：</strong></p>
-<p><strong>这里的url，打开Jenkins web页面：先复制IP：端口，然后进入配置–构建触发器</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">然后回到gitlab上在url上写入：http://192.168.10.131:8080/job/web-demo/build?token=396ce000f4b4cc4978c0</span><br><span class="line">取消勾选Enable SSL verification --Add webhook</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">点击test--Push events--会出现http 201界面表示成功</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>回到终端进入刚才Gitlab仓库项目中，上传一个文件到远程仓库中，查看Jenkins是否会自动构建上传的文件或代码：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd yjp/</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># vim python.py</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># git add python.py</span></span><br><span class="line">[root@localhost yjp]<span class="comment"># git commit -m &quot;测试jenkins&quot;</span></span><br><span class="line">[master 1be7612] 测试jenkins</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 python.py</span><br><span class="line">[root@localhost yjp]<span class="comment"># git push origin master </span></span><br><span class="line">Counting objects: 4, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 2 threads.</span><br><span class="line">Compressing objects: 100% (2/2), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (3/3), 282 bytes | 0 bytes/s, <span class="keyword">done</span>.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To git@192.168.10.128:root/yjp.git</span><br><span class="line">   16377f2..1be7612  master -&gt; master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>回到Jenkins的web页面查看：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">web-demo--点击最新构建（控制台输出）--会看到：Commit message: <span class="string">&quot;测试jenkins&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>至此，gitlab代理自动构建成功</p>
-<h5 id="本文作者：-SpiderMan"><a href="#本文作者：-SpiderMan" class="headerlink" title="本文作者： SpiderMan"></a>本文作者： SpiderMan</h5><h5 id="版权声明：大家随意转载啦，但！转载请注意表明出处"><a href="#版权声明：大家随意转载啦，但！转载请注意表明出处" class="headerlink" title="版权声明：大家随意转载啦，但！转载请注意表明出处"></a>版权声明：大家随意转载啦，但！转载请注意表明出处</h5>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="\img\shoukuanma.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">linux服务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/05/03/jenkins%E5%9F%BA%E7%A1%80-Gitlab%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2022/05/06/acme-sh/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          acme.sh
-        
-      </div>
-    </a>
   
   
-    <a href="/2022/05/02/%E5%AE%89%E8%A3%85varnish7%E7%89%88%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安装varnish7版本</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="jenkins基础-Gitlab代理自动构建" data-title="jenkins基础+Gitlab代理自动构建" data-url="http://yjpn.top/2022/05/03/jenkins%E5%9F%BA%E7%A1%80-Gitlab%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"ture"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "http://yjpn.top/2022/05/03/jenkins%E5%9F%BA%E7%A1%80-Gitlab%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/", 
-    sourceId: "jenkins基础-Gitlab代理自动构建",
-    productKey: "ture",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="jenkins基础-Gitlab代理自动构建" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "ture",
-        conf: "ture"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -466,8 +228,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yjpn.top">
-  <title>liunx_shell | SpiderMan</title>
+  <title>python面向对象和网络编程和并发编程 | SpiderMan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="shell_script">
+  <meta name="description" content="python面向对象和网络编程和并发编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="liunx_shell">
-<meta property="og:url" content="http://yjpn.top/2022/04/19/liunx_shell/index.html">
+<meta property="og:title" content="python面向对象和网络编程和并发编程">
+<meta property="og:url" content="http://yjpn.top/2022/07/01/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="SpiderMan">
-<meta property="og:description" content="shell_script">
+<meta property="og:description" content="python面向对象和网络编程和并发编程">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-22T08:14:51.851Z">
+<meta property="article:published_time" content="2022-06-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-20T11:05:30.612Z">
 <meta property="article:author" content="SpiderMan">
-<meta property="article:tag" content="shell_script100例（目前更新2例）">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SpiderMan" type="application/atom+xml">
@@ -155,39 +155,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-liunx_shell" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python面向对象和网络编程和并发编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      liunx_shell
+      python面向对象和网络编程和并发编程
     </h1>
   
 
         
-        <a href="/2022/04/19/liunx_shell/" class="archive-article-date">
-  	<time datetime="2022-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-19</time>
+        <a href="/2022/07/01/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2022-06-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="shell-script"><a href="#shell-script" class="headerlink" title="shell_script"></a>shell_script</h1><span id="more"></span>
+        <h1 id="python面向对象和网络编程和并发编程"><a href="#python面向对象和网络编程和并发编程" class="headerlink" title="python面向对象和网络编程和并发编程"></a>python面向对象和网络编程和并发编程</h1><span id="more"></span>
+
+<h2 id="初识面向对象"><a href="#初识面向对象" class="headerlink" title="初识面向对象"></a>初识面向对象</h2><p><strong>想要通过面向对象实现某个或某些功能时需要2步</strong>：</p>
+<p><strong>1.定义类：在类中定义方法，在方法中实现具体的功能</strong></p>
+<p><strong>2.实例化类并的一个对象，通过对象去调用并执行方法</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Message</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">send_email</span>(<span class="params">self,a1,a2</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：1.类名称首字母大写&amp;驼峰式命名：2.py3之后默认类都继承object：3.在类中编写的函数称为方法；4.每个方法的第一个参数是self</strong></p>
+<h2 id="对象和self"><a href="#对象和self" class="headerlink" title="对象和self"></a>对象和self</h2><p><strong>在每一个类中都可以定义个特殊的：__ init __初始化方法，在实例化类创建对象时自动执行，即：对象+类</strong></p>
+<p><strong>1.self,本质上就是一个参数，这个参数是python内部会提供，其实本质上就是调用当前方法的那个对象</strong></p>
+<p><strong>2.对象，奇数类实例化出来的”一块内存“，默认里面没有数据；经过类的‘__init__’方法，可以在内存中初始化一些数据</strong></p>
+<h2 id="实例变量和绑定方法"><a href="#实例变量和绑定方法" class="headerlink" title="实例变量和绑定方法"></a>实例变量和绑定方法</h2><p><strong>实例变量：属于对象，只能通过对象调用。</strong></p>
+<p><strong>绑定方法：属于类，通过对象调用或通过类调用。</strong></p>
+<p><strong>执行绑定方法</strong></p>
+<p>p1 = 类（”方方“,18.10）</p>
+<p>p1.show()</p>
+<p>#或者</p>
+<p>p1 = 类（“朋朋”，18.4）</p>
+<p>类.show(p1)</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">		<span class="keyword">pass</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span>(<span class="title class_ inherited__">Base</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">#son为子类，Base为父类。优先在自己的类中找，自己没有才去父类</span></span><br><span class="line">s1 = Son()</span><br><span class="line">s1.show()</span><br><span class="line">s1.func()  <span class="comment">#直接调用Base类中的func方法</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="继承小结"><a href="#继承小结" class="headerlink" title="继承小结"></a>继承小结</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>执行对象时，优先去当前对象所关联的类中找，没有的话采取她的父类中查找</span><br><span class="line"><span class="number">2.</span>python支持多继承：先继承左边，再继承右边的。</span><br><span class="line"><span class="number">3.</span>self到底是谁？去self对应的那个类中去获取成员，没有就按照继承关系向上查找</span><br></pre></td></tr></table></figure>
+
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>由于python对数据类型没有任何限制，所以他天生支持多态</p>
+<h2 id="三大特性总结："><a href="#三大特性总结：" class="headerlink" title="三大特性总结："></a>三大特性总结：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">封装：将方法封装到类中或将数据封装到对象中，便于以后使用</span><br><span class="line">继承：将类中的公共的方法提取到基类中去实现</span><br><span class="line">多态：python默认支持多态（这种方式称为鸭子类型）。</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="第一章-httpd启动脚本"><a href="#第一章-httpd启动脚本" class="headerlink" title="第一章:httpd启动脚本"></a>第一章:httpd启动脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/init.d/</span><br><span class="line">Vim httpd</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="keyword">case</span> “<span class="variable">$1</span>” <span class="keyword">in</span></span><br><span class="line">start)</span><br><span class="line">netstat -anput | grep httpd &amp;&gt; /dev/null</span><br><span class="line"><span class="keyword">if</span> [ $? -ne 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">systemctl start httpd &amp;&gt; /dev/null</span><br><span class="line"><span class="built_in">echo</span> “正在启动 httpd….”</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> “httpd is running”</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">;;</span><br><span class="line">stop)</span><br><span class="line">netstat -anput | grep httpd &amp;&gt; /dev/null</span><br><span class="line"><span class="keyword">if</span> [ $? -eq 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">systemctl stop httpd &amp;&gt; /dev/null</span><br><span class="line"><span class="built_in">echo</span> “正在关闭 httpd….”</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> “httpd is stop”</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">;;</span><br><span class="line">status)</span><br><span class="line">systemctl status httpd</span><br><span class="line">;;</span><br><span class="line">restart)</span><br><span class="line"><span class="variable">$0</span> stop &amp;&gt; /dev/null</span><br><span class="line"><span class="built_in">echo</span> “正在关闭 httpd….”</span><br><span class="line"><span class="variable">$0</span> start &amp;&gt; /dev/null</span><br><span class="line"><span class="built_in">echo</span> “正在启动 httpd….”</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line"><span class="built_in">echo</span> “用法：<span class="variable">$0</span>&#123;start|stop|status|restart&#125;”</span><br><span class="line">;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="第二章-交互模式，用scp給多台服务器传文件（这里给IP为130到140服务器传-etc-hosts文件）"><a href="#第二章-交互模式，用scp給多台服务器传文件（这里给IP为130到140服务器传-etc-hosts文件）" class="headerlink" title="第二章 交互模式，用scp給多台服务器传文件（这里给IP为130到140服务器传/etc/hosts文件）"></a>第二章 交互模式，用scp給多台服务器传文件（这里给IP为130到140服务器传/etc/hosts文件）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">yum 安装 expect解释器，和expect的依赖tcl</span><br><span class="line">[root@localhost ~]<span class="comment"># yum -y install tcl expect</span></span><br><span class="line">vim 创建scp.sh文件</span><br><span class="line">修改以下/etc/hosts文件</span><br><span class="line">[root@localhost ~]<span class="comment"># cat /etc/hosts</span></span><br><span class="line">127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4</span><br><span class="line">::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</span><br><span class="line">192.168.10.134  www.yjpn.top</span><br><span class="line">[root@localhost ~]<span class="comment"># vim scp.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">rpm -qa | grep expect &amp;&gt; /dev/null</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;$?&quot;</span> -eq <span class="string">&quot;0&quot;</span> ] &amp;&amp; yum -y install expect tcl &amp;&gt; /dev/null</span><br><span class="line">IP=192.168.10.</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> &#123;130.。140&#125;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="comment">#expect交互模式用expect，so！指定路径/usr/bin/expect</span></span><br><span class="line">/usr/bin/expect  &lt;&lt; <span class="string">EOF      #在/usr/bin/expect 解释器下进行该命令</span></span><br><span class="line"><span class="string">spawn scp -r /etc/hosts/ root@$IP$i:/etc/    #启动进程，并跟踪后续交互内容</span></span><br><span class="line"><span class="string">expect &#123;</span></span><br><span class="line"><span class="string">        &quot;(yes/no)&quot; &#123; send &quot;yes\r&quot;;exp_continue &#125;   #匹配（yes/no），并输出yes,然后自动回车 ,匹配多个字符串时，在后加此命令</span></span><br><span class="line"><span class="string">        &quot;password&quot; &#123; send &quot;123456\r&quot; &#125;          #匹配password行，并输入该主机root密码，123456，然后自动回车</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">给scp.sh添加执行权限</span><br><span class="line">[root@localhost ~]<span class="comment"># chmod +x scp.sh</span></span><br><span class="line">运行脚本</span><br><span class="line">[root@localhost ~]<span class="comment"># sh scp.sh </span></span><br><span class="line">spawn scp -r /etc/hosts/ root@192.168.10.134:/etc/</span><br><span class="line">root@192.168.10.134<span class="string">&#x27;s password: </span></span><br><span class="line"><span class="string">hosts</span></span><br><span class="line"><span class="string">因为我这里就开了一台134的主机so，去134这台主机查看是否传送成功</span></span><br><span class="line"><span class="string">[root@localhost ~]# cat /etc/hosts</span></span><br><span class="line"><span class="string">127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4</span></span><br><span class="line"><span class="string">::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</span></span><br><span class="line"><span class="string">192.168.10.134  www.yjpn.top</span></span><br><span class="line"><span class="string">完成~</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="第三章-一键创建域名并选择要不要加证书"><a href="#第三章-一键创建域名并选择要不要加证书" class="headerlink" title="第三章:一键创建域名并选择要不要加证书"></a>第三章:一键创建域名并选择要不要加证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/bin/bash</span></span><br><span class="line">path_domain=/home/nginx/cdn/</span><br><span class="line">path_ssl=/home/nginx/cdn/ssl/</span><br><span class="line"><span class="function"><span class="title">domain</span></span>()&#123;</span><br><span class="line">                sed -i <span class="string">&quot;3c server_name <span class="variable">$filename</span>;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                sed -i <span class="string">&quot;11c server_name <span class="variable">$filename</span>;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">c|C)</span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">&quot;请输入你要创建的域名文件夹:&quot;</span> filename</span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">&quot;<span class="variable">$filename</span>该域名要证书吗？yes/no:&quot;</span> ssl</span><br><span class="line"><span class="comment">#/bin/bash</span></span><br><span class="line">path_domain=/home/nginx/cdn/</span><br><span class="line">path_ssl=/home/nginx/cdn/ssl/</span><br><span class="line"><span class="function"><span class="title">domain</span></span>()&#123;</span><br><span class="line">                sed -i <span class="string">&quot;3c server_name <span class="variable">$filename</span>;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                sed -i <span class="string">&quot;11c server_name <span class="variable">$filename</span>;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">c|C)</span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">&quot;请输入你要创建的域名文件夹:&quot;</span> filename</span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">&quot;<span class="variable">$filename</span>该域名要证书吗？yes/no:&quot;</span> ssl</span><br><span class="line">        <span class="keyword">case</span> <span class="variable">$ssl</span> <span class="keyword">in</span></span><br><span class="line">        <span class="built_in">yes</span>)</span><br><span class="line">                domain</span><br><span class="line">                <span class="comment">#颁发安装证书到指定路径</span></span><br><span class="line">                <span class="built_in">mkdir</span> $path_ssl<span class="variable">$filename</span></span><br><span class="line">                <span class="built_in">cd</span> /root/.acme.sh/</span><br><span class="line">                ./acme.sh --issue -d <span class="variable">$filename</span> --nginx $path_domain<span class="variable">$filename</span> --force</span><br><span class="line">                ./acme.sh --install-cert -d <span class="variable">$filename</span> --key-file $path_ssl<span class="variable">$filename</span>/<span class="variable">$filename</span>.key --fullchain-file $path_ssl<span class="variable">$filename</span>/<span class="variable">$filename</span>.cer --reloadcmd <span class="string">&quot;nginx -s reload&quot;</span></span><br><span class="line">                <span class="comment">#证书路径</span></span><br><span class="line">                sed -i <span class="string">&quot;6c rewrite ^/(.*) https://<span class="variable">$filename</span> permanent;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                sed -i <span class="string">&quot;12c ssl_certificate $path_ssl<span class="variable">$filename</span>/<span class="variable">$filename</span>.cer;&quot;</span>  <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                sed -i <span class="string">&quot;13c ssl_certificate_key $path_ssl<span class="variable">$filename</span>/<span class="variable">$filename</span>.key;&quot;</span>  <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                nginx -s reload</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">&quot;带证书的域名<span class="variable">$filename</span>创建完成&quot;</span></span><br><span class="line">                ;;</span><br><span class="line">        no)</span><br><span class="line">                domain</span><br><span class="line">                nginx -s reload</span><br><span class="line">                sed -i <span class="string">&quot;6c #rewrite ^/(.*) https://<span class="variable">$filename</span> permanent;&quot;</span> <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filename</span>&quot;</span>.conf</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">&quot;不带证书的域名<span class="variable">$filename</span>创建完成&quot;</span></span><br><span class="line">                ;;</span><br><span class="line">        *)</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">&quot;只能填写yes/no&quot;</span></span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line">        ;;</span><br><span class="line">d|D)</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$path_domain</span></span><br><span class="line">        <span class="built_in">ls</span> | grep .conf</span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">&quot;请输入你要删除域名文件夹且删除证书:&quot;</span> filenamed</span><br><span class="line">        [ -f <span class="string">&quot;<span class="variable">$path_domain</span>/<span class="variable">$filenamed</span>.conf&quot;</span> ] &amp;&amp; <span class="built_in">rm</span> -rf <span class="variable">$path_domain</span>/<span class="string">&quot;<span class="variable">$filenamed</span>&quot;</span>.conf</span><br><span class="line">        <span class="built_in">ls</span> | grep .conf</span><br><span class="line">        <span class="built_in">rm</span> -rf <span class="variable">$path_ssl</span>/<span class="variable">$filenamed</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;已删除证书文件&quot;</span></span><br><span class="line">        nginx -s reload</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$filenamed</span>域名删除完成!!&quot;</span></span><br><span class="line">        ;;</span><br><span class="line">*)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;只有这创建c|C删除d|D这两个选项&quot;</span></span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="本文作者：-SpiderMan"><a href="#本文作者：-SpiderMan" class="headerlink" title="本文作者： SpiderMan"></a>本文作者： SpiderMan</h5><h5 id="版权声明：大家随意转载啦，但！转载请注意表明出处"><a href="#版权声明：大家随意转载啦，但！转载请注意表明出处" class="headerlink" title="版权声明：大家随意转载啦，但！转载请注意表明出处"></a>版权声明：大家随意转载啦，但！转载请注意表明出处</h5><hr>
+
+
+
 
       
 
@@ -227,7 +248,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">shell_script100例（目前更新2例）</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -283,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/04/19/liunx_shell/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/07/01/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,15 +318,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/04/19/liunx%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/01/python%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          liunx基本命令
+          python基础
         
       </div>
     </a>
   
+  
+    <a href="/2022/06/23/varnish%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">varnish参数详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -331,7 +357,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="liunx_shell" data-title="liunx_shell" data-url="http://yjpn.top/2022/04/19/liunx_shell/"></div>
+	<div class="ds-thread" data-thread-key="python面向对象和网络编程和并发编程" data-title="python面向对象和网络编程和并发编程" data-url="http://yjpn.top/2022/07/01/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -354,8 +380,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yjpn.top/2022/04/19/liunx_shell/", 
-    sourceId: "liunx_shell",
+    url: "http://yjpn.top/2022/07/01/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/", 
+    sourceId: "python面向对象和网络编程和并发编程",
     productKey: "ture",
     target: "cloud-tie-wrapper"
   };
@@ -364,7 +390,7 @@
   
 
   
-  <div id="SOHUCS" sid="liunx_shell" ></div> 
+  <div id="SOHUCS" sid="python面向对象和网络编程和并发编程" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

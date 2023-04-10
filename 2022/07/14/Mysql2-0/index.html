@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yjpn.top">
-  <title>Jumpserver | SpiderMan</title>
+  <title>Mysql2.0 | SpiderMan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jumpserver部署及使用">
+  <meta name="description" content="Mysql2.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jumpserver">
-<meta property="og:url" content="http://yjpn.top/2022/04/26/Jumpserver%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Mysql2.0">
+<meta property="og:url" content="http://yjpn.top/2022/07/14/Mysql2-0/index.html">
 <meta property="og:site_name" content="SpiderMan">
-<meta property="og:description" content="Jumpserver部署及使用">
+<meta property="og:description" content="Mysql2.0">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-27T12:15:25.873Z">
+<meta property="article:published_time" content="2022-07-14T09:48:29.000Z">
+<meta property="article:modified_time" content="2023-04-10T10:15:57.842Z">
 <meta property="article:author" content="SpiderMan">
-<meta property="article:tag" content="liunux_服务">
+<meta property="article:tag" content="学习Mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SpiderMan" type="application/atom+xml">
@@ -155,51 +155,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Jumpserver部署及使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Mysql2-0" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Jumpserver
+      Mysql2.0
     </h1>
   
 
         
-        <a href="/2022/04/26/Jumpserver%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
+        <a href="/2022/07/14/Mysql2-0/" class="archive-article-date">
+  	<time datetime="2022-07-14T09:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Jumpserver部署及使用"><a href="#Jumpserver部署及使用" class="headerlink" title="Jumpserver部署及使用"></a>Jumpserver部署及使用</h1><span id="more"></span>
-
-<h2 id="jumperver介绍"><a href="#jumperver介绍" class="headerlink" title="jumperver介绍"></a>jumperver介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">一．jumpserver介绍：</span><br><span class="line">Jumpserver是一款由Python编写开源的跳板机（堡垒机系统），实现了跳板机的应有的功能，基于ssh协议来管理服务器资源，客户端不需要安装jumpserver客户端软件程序</span><br><span class="line">Jumpserver 是全球首款完全开源的堡垒机, 使用 GNU GPL v2.0 开源协议, 是符合 4A 的专业运维审计系统</span><br><span class="line">Jumpserver 使用 Python / Django 进行开发, 遵循 Web 2.0 规范, 配备了业界领先的 Web Terminal 解决方案, 交互界面美观、用户体验好</span><br><span class="line">Jumpserver 采纳分布式架构, 支持多机房跨区域部署, 中心节点提供 API, 各机房部署登录节点, 可横向扩展、无并发访问限制</span><br><span class="line">Jumpserver 现已支持管理 SSH、 Telnet、 RDP、 VNC 协议资产</span><br><span class="line"></span><br><span class="line">二．Jumpserver的特点：</span><br><span class="line">1.完全开源</span><br><span class="line">2.Python编写，容易二次开发使用</span><br><span class="line">3.集成了ansible，批量命令等</span><br><span class="line">4.支持web Terminal （web终端，可以在浏览器web页面运行终端，管理服务器资源）</span><br><span class="line">5.Bootstrap编写，界面美观（前段页面效果，有web前端人员完成的）</span><br><span class="line">6.自动回收硬件信息（如后端服务器的磁盘空间、内存大小等信息）</span><br><span class="line">7.录像回放</span><br><span class="line">8.命令搜索</span><br><span class="line">9.实时监控</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装jumpserver"><a href="#安装jumpserver" class="headerlink" title="安装jumpserver"></a>安装jumpserver</h2><h2 id="首先将环境字体设置成中文，因为jumpserver的日志文件里面的内容会包含中文字符，不支持可能会乱码："><a href="#首先将环境字体设置成中文，因为jumpserver的日志文件里面的内容会包含中文字符，不支持可能会乱码：" class="headerlink" title="首先将环境字体设置成中文，因为jumpserver的日志文件里面的内容会包含中文字符，不支持可能会乱码："></a>首先将环境字体设置成中文，因为jumpserver的日志文件里面的内容会包含中文字符，不支持可能会乱码：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8</span></span><br><span class="line">[root@localhost ~]<span class="comment"># export LC_ALL=zh_CN&gt;UTF-8</span></span><br><span class="line">[root@localhost ~]<span class="comment"># echo &#x27;LC_ALL=zh_CN.UTF-8&#x27; &gt; /etc/locale.conf</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装python3"><a href="#安装python3" class="headerlink" title="安装python3"></a>安装python3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">安装python3的依赖</span><br><span class="line">yum -y install wget sqlite-devel xz gcc automake zlib-devel openssl-devel epel-release git</span><br><span class="line">需要用到的包</span><br><span class="line">Python-3.6.1.tar.xz</span><br><span class="line">解压编译安装</span><br><span class="line">[root@localhost ~]<span class="comment"># tar xf Python-3.6.1.tar.xz </span></span><br><span class="line">[root@localhost ~]<span class="comment"># cd Python-3.6.1/</span></span><br><span class="line">[root@localhost Python-3.6.1]<span class="comment"># ./configure &amp;&amp; make &amp;&amp; make install</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="设置python3的虚拟运行环境，在-opt目录设置名为py3的虚拟环境："><a href="#设置python3的虚拟运行环境，在-opt目录设置名为py3的虚拟环境：" class="headerlink" title="*设置python3的虚拟运行环境，在/opt目录设置名为py3的虚拟环境：*"></a><em><strong>*设置python3的虚拟运行环境，在/opt目录设置名为py3的虚拟环境：*</strong></em></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Python-3.6.1]<span class="comment"># cd /opt/</span></span><br><span class="line">[root@localhost opt]<span class="comment"># python3 -m venv py3</span></span><br><span class="line">[root@localhost opt]<span class="comment"># source /opt/py3/bin/activate</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="设置自动载入py3虚拟环境的服务"><a href="#设置自动载入py3虚拟环境的服务" class="headerlink" title="设置自动载入py3虚拟环境的服务"></a>设置自动载入py3虚拟环境的服务</h2><h2 id="需要软件包："><a href="#需要软件包：" class="headerlink" title="需要软件包："></a>需要软件包：</h2><h2 id="autoenv-zip"><a href="#autoenv-zip" class="headerlink" title="*autoenv.zip*"></a><em><strong>*autoenv.zip*</strong></em></h2><h2 id="解压配置："><a href="#解压配置：" class="headerlink" title="解压配置："></a>解压配置：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost opt]<span class="comment"># unzip autoenv.zip </span></span><br><span class="line">Archive:  autoenv.zip</span><br><span class="line">17b94df45d7407c2c0bf7843e7336c97f13fc331</span><br><span class="line">   creating: autoenv/</span><br><span class="line">  inflating: autoenv/.travis.yml     </span><br><span class="line">  inflating: autoenv/CHANGELOG.md    </span><br><span class="line">  inflating: autoenv/LICENSE         </span><br><span class="line">  inflating: autoenv/Makefile        </span><br><span class="line">  inflating: autoenv/README.rst      </span><br><span class="line">  inflating: autoenv/activate.sh     </span><br><span class="line">  inflating: autoenv/setup.py        </span><br><span class="line">   creating: autoenv/tests/</span><br><span class="line"> extracting: autoenv/tests/.gitignore  </span><br><span class="line">  inflating: autoenv/tests/functions  </span><br><span class="line">  inflating: autoenv/tests/test.sh   </span><br><span class="line">  inflating: autoenv/tests/test_auth_spaces.sh  </span><br><span class="line">  inflating: autoenv/tests/test_cd_env.sh  </span><br><span class="line">  inflating: autoenv/tests/test_cd_spaces.sh  </span><br><span class="line">  inflating: autoenv/tests/test_colons.sh  </span><br><span class="line">  inflating: autoenv/tests/test_custom_filename.sh  </span><br><span class="line">  inflating: autoenv/tests/test_doubleslash.sh  </span><br><span class="line">  inflating: autoenv/tests/test_noclobber.sh  </span><br><span class="line">  inflating: autoenv/tests/test_not_file.sh  </span><br><span class="line">  inflating: autoenv/tests/test_simple.sh  </span><br><span class="line">  inflating: autoenv/tests/test_symlink.sh  </span><br><span class="line">(py3) [root@localhost opt]<span class="comment"># echo &quot;source /opt/autoenv/activate.sh&quot; &gt;&gt; /root/.bashrc </span></span><br><span class="line">(py3) [root@localhost opt]<span class="comment"># source /root/.bashrc</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装第一个组件jumpserver并配置-下载：https-github-com-jumpserver-git"><a href="#安装第一个组件jumpserver并配置-下载：https-github-com-jumpserver-git" class="headerlink" title="安装第一个组件jumpserver并配置  下载：https://github.com/jumpserver.git"></a>安装第一个组件jumpserver并配置  下载：<a target="_blank" rel="noopener" href="https://github.com/jumpserver.git">https://github.com/jumpserver.git</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost opt]<span class="comment"># unzip jumpserver.zip    </span></span><br><span class="line">(py3) [root@localhost opt]<span class="comment"># echo &quot;source /opt/py3/bin/activate&quot; &gt; /opt/jumpserver/.env</span></span><br><span class="line">(py3) [root@localhost opt]<span class="comment"># cd jumpserver/</span></span><br><span class="line">autoenv:</span><br><span class="line">autoenv: WARNING:</span><br><span class="line">autoenv: This is the first time you are about to <span class="built_in">source</span> /opt/jumpserver/.env:</span><br><span class="line">autoenv:</span><br><span class="line">autoenv:   --- (begin contents) ---------------------------------------</span><br><span class="line">autoenv:     <span class="built_in">source</span> /opt/py3/bin/activate$</span><br><span class="line">autoenv:</span><br><span class="line">autoenv:   --- (end contents) -----------------------------------------</span><br><span class="line">autoenv:</span><br><span class="line">autoenv: Are you sure you want to allow this? (y/N) y</span><br><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># cd requirements/</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># ls</span></span><br><span class="line">alpine_requirements.txt  deb_requirements.txt  issues.txt  mac_requirements.txt  requirements.txt  rpm_requirements.txt</span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># yum -y install $(cat rpm_requirements.txt)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="更新pip"><a href="#更新pip" class="headerlink" title="更新pip"></a>更新pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost requirements]<span class="comment"># pip install --upgrade pip</span></span><br><span class="line"><span class="comment">#pip python安装软件包的命令</span></span><br><span class="line">pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装MySQL，版本必须是5-5以上，并创建需要的用户及库"><a href="#安装MySQL，版本必须是5-5以上，并创建需要的用户及库" class="headerlink" title="*安装MySQL，版本必须是5.5以上，并创建需要的用户及库*"></a><em><strong>*安装MySQL，版本必须是5.5以上，并创建需要的用户及库*</strong></em></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost requirements]<span class="comment"># yum -y install mariadb*</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># systemctl start mariadb</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># mysqladmin -u root password 123.com</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># mysql -u root -p123.com</span></span><br><span class="line">MariaDB [(none)]&gt; create database jumpserver default charset <span class="string">&#x27;utf8&#x27;</span> ;</span><br><span class="line">MariaDB [(none)]&gt; grant all on jumpserver.* to jumpserver@127.0.0.1 identified by <span class="string">&#x27;123.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost requirements]<span class="comment"># yum -y install redis</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># systemctl start redis</span></span><br><span class="line">(py3) [root@localhost requirements]<span class="comment"># netstat -anput | grep 6379</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改jumpserver配置文件"><a href="#修改jumpserver配置文件" class="headerlink" title="修改jumpserver配置文件"></a>修改jumpserver配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">(py3) [root@localhost requirements]<span class="comment"># cd ..</span></span><br><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># cp config_example.yml config.yml </span></span><br><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 49  #生成随机码</span></span><br><span class="line">iE9mFf1Z7FLDgngjQqOqC1j80MY6LFkDheMAzoVVSUYFJz2Bg(py3) [root@localhost jumpserver]<span class="comment"># </span></span><br><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># vim config.yml </span></span><br><span class="line">(py3) [root@localhost jumpserver]<span class="comment"># cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 16</span></span><br><span class="line">OfH3C2D9Kv0VEDX7(py3) [root@localhovim config.yml </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># $ cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 49;echo</span></span><br><span class="line">SECRET_KEY: iE9mFf1Z7FLDgngjQqOqC1j80MY6LFkDheMAzoVVSUYFJz2Bg</span><br><span class="line"></span><br><span class="line"><span class="comment"># SECURITY WARNING: keep the bootstrap token used in production secret!</span></span><br><span class="line"><span class="comment"># 预共享Token coco和guacamole用来注册服务账号，不在使用原来的注册接受机制</span></span><br><span class="line">BOOTSTRAP_TOKEN: OfH3C2D9Kv0VEDX7</span><br><span class="line"></span><br><span class="line"><span class="comment"># Development env open this, when error occur display the full process track, Production disable it</span></span><br><span class="line"><span class="comment"># DEBUG 模式 开启DEBUG后遇到错误时可以看到更多日志</span></span><br><span class="line"> DEBUG: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DEBUG, INFO, WARNING, ERROR, CRITICAL can set. See https://docs.djangoproject.com/en/1.10/topics/logging/</span></span><br><span class="line"><span class="comment"># 日志级别</span></span><br><span class="line"> LOG_LEVEL: ERROR</span><br><span class="line"><span class="comment"># LOG_DIR: </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Session expiration setting, Default 24 hour, Also set expired on on browser close</span></span><br><span class="line"><span class="comment"># 浏览器Session过期时间，默认24小时, 也可以设置浏览器关闭则过期</span></span><br><span class="line"><span class="comment"># SESSION_COOKIE_AGE: 86400</span></span><br><span class="line">SESSION_EXPIRE_AT_BROWSER_CLOSE: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Mysql作为数据库</span></span><br><span class="line">DB_ENGINE: mysql</span><br><span class="line">DB_HOST: 127.0.0.1</span><br><span class="line">DB_PORT: 3306</span><br><span class="line">DB_USER: jumpserver</span><br><span class="line">DB_PASSWORD: 123.com</span><br><span class="line">DB_NAME: jumpserver</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行时绑定端口</span></span><br><span class="line">HTTP_BIND_HOST: 0.0.0.0</span><br><span class="line">HTTP_LISTEN_PORT: 8080</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use Redis as broker for celery and web socket</span></span><br><span class="line"><span class="comment"># Redis配置</span></span><br><span class="line">REDIS_HOST: 127.0.0.1</span><br><span class="line">REDIS_PORT: 6379</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="Mysql2-0"><a href="#Mysql2-0" class="headerlink" title="Mysql2.0"></a>Mysql2.0</h1><span id="more"></span>
 
 
       
@@ -240,7 +216,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">liunux_服务</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习Mysql</a>
         		</li>
       		
 		</ul>
@@ -296,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/04/26/Jumpserver%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/07/14/Mysql2-0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -310,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/04/30/nginx%E8%AF%81%E4%B9%A6%E8%AE%A4%E8%AF%81/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nginx证书认证
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/25/ELK/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ELK</div>
+    <a href="/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python面向对象和网络编程和并发编程2.0</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -349,7 +316,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Jumpserver部署及使用" data-title="Jumpserver" data-url="http://yjpn.top/2022/04/26/Jumpserver%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/"></div>
+	<div class="ds-thread" data-thread-key="Mysql2-0" data-title="Mysql2.0" data-url="http://yjpn.top/2022/07/14/Mysql2-0/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -372,8 +339,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yjpn.top/2022/04/26/Jumpserver%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/", 
-    sourceId: "Jumpserver部署及使用",
+    url: "http://yjpn.top/2022/07/14/Mysql2-0/", 
+    sourceId: "Mysql2-0",
     productKey: "ture",
     target: "cloud-tie-wrapper"
   };
@@ -382,7 +349,7 @@
   
 
   
-  <div id="SOHUCS" sid="Jumpserver部署及使用" ></div> 
+  <div id="SOHUCS" sid="Mysql2-0" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

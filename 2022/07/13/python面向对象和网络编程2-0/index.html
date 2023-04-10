@@ -11,7 +11,7 @@
   <meta name="description" content="python面向对象和网络编程和并发编程2.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python面向对象和网络编程和并发编程2.0">
-<meta property="og:url" content="http://yjpn.top/2022/07/12/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/index.html">
+<meta property="og:url" content="http://yjpn.top/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/index.html">
 <meta property="og:site_name" content="SpiderMan">
 <meta property="og:description" content="python面向对象和网络编程和并发编程2.0">
 <meta property="og:locale" content="en_US">
@@ -22,8 +22,8 @@
 <meta property="og:image" content="https://pan.baidu.com/s/assets/image-20210215090446549.png">
 <meta property="og:image" content="https://pan.baidu.com/s/assets/image-20210225102151570.png">
 <meta property="og:image" content="https://pan.baidu.com/s/assets/image-20210302110643327.png">
-<meta property="article:published_time" content="2022-07-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-31T15:27:27.886Z">
+<meta property="article:published_time" content="2022-07-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-10T09:46:58.048Z">
 <meta property="article:author" content="SpiderMan">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -175,8 +175,8 @@
   
 
         
-        <a href="/2022/07/12/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/" class="archive-article-date">
-  	<time datetime="2022-07-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
+        <a href="/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/" class="archive-article-date">
+  	<time datetime="2022-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-13</time>
 </a>
         
       </header>
@@ -1198,7 +1198,7 @@
 <li><p>服务端</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">sock.bind((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">8001</span>))</span><br><span class="line">sock.listen(<span class="number">5</span>)</span><br><span class="line">conn, addr = sock.accept()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 固定读取4字节</span></span><br><span class="line">header1 = conn.recv(<span class="number">4</span>)</span><br><span class="line">data_length1 = struct.unpack(<span class="string">&#x27;i&#x27;</span>, header1)[<span class="number">0</span>] <span class="comment"># 数据字节长度 21</span></span><br><span class="line">has_recv_len = <span class="number">0</span></span><br><span class="line">data1 = <span class="string">b&quot;&quot;</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    length = data_length1 - has_recv_len</span><br><span class="line">    <span class="keyword">if</span> length &gt; <span class="number">1024</span>:</span><br><span class="line">        lth = <span class="number">1024</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">        lth = length</span><br><span class="line">	chunk = conn.recv(lth) <span class="comment"># 可能一次收不完，自己可以计算长度再次使用recv收取，指导收完为止。 1024*8 = 8196</span></span><br><span class="line">    data1 += chunk</span><br><span class="line">    has_recv_len += <span class="built_in">len</span>(chunk)</span><br><span class="line">    <span class="keyword">if</span> has_recv_len == data_length1:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="built_in">print</span>(data1.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 固定读取4字节</span></span><br><span class="line">header2 = conn.recv(<span class="number">4</span>)</span><br><span class="line">data_length2 = struct.unpack(<span class="string">&#x27;i&#x27;</span>, header2)[<span class="number">0</span>] <span class="comment"># 数据字节长度</span></span><br><span class="line">data2 = conn.recv(data_length2) <span class="comment"># 长度</span></span><br><span class="line"><span class="built_in">print</span>(data2.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"></span><br><span class="line">conn.close()</span><br><span class="line">sock.close()</span><br></pre></td></tr></table></figure></li>
 <li><p>客户端</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">client = socket.socket()</span><br><span class="line">client.connect((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">8001</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一条数据</span></span><br><span class="line">data1 = <span class="string">&#x27;alex正在吃&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line">header1 = struct.pack(<span class="string">&#x27;i&#x27;</span>, <span class="built_in">len</span>(data1))</span><br><span class="line"></span><br><span class="line">client.sendall(header1)</span><br><span class="line">client.sendall(data1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二条数据</span></span><br><span class="line">data2 = <span class="string">&#x27;翔&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">header2 = struct.pack(<span class="string">&#x27;i&#x27;</span>, <span class="built_in">len</span>(data2))</span><br><span class="line">client.sendall(header2)</span><br><span class="line">client.sendall(data2)</span><br><span class="line"></span><br><span class="line">client.close()</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">  </span><br><span class="line">client = socket.socket()</span><br><span class="line">client.connect((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">8001</span>))</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 第一条数据</span></span><br><span class="line">data1 = <span class="string">&#x27;alex正在吃&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">  </span><br><span class="line">header1 = struct.pack(<span class="string">&#x27;i&#x27;</span>, <span class="built_in">len</span>(data1))</span><br><span class="line">  </span><br><span class="line">client.sendall(header1)</span><br><span class="line">client.sendall(data1)</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 第二条数据</span></span><br><span class="line">data2 = <span class="string">&#x27;翔&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">header2 = struct.pack(<span class="string">&#x27;i&#x27;</span>, <span class="built_in">len</span>(data2))</span><br><span class="line">client.sendall(header2)</span><br><span class="line">client.sendall(data2)</span><br><span class="line">  </span><br><span class="line">client.close()</span><br></pre></td></tr></table></figure></li>
 </ul>
 </blockquote>
 <h3 id="案例：消息-amp-文件上传"><a href="#案例：消息-amp-文件上传" class="headerlink" title="案例：消息 &amp; 文件上传"></a>案例：消息 &amp; 文件上传</h3><ul>
@@ -1771,7 +1771,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/07/12/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yjpn.top/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1785,8 +1785,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2022/07/14/Mysql2-0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Mysql2.0
+        
+      </div>
+    </a>
   
-    <a href="/2022/07/11/python%E5%87%BD%E6%95%B0%E7%BC%96%E7%A8%8B2-0/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2022/07/12/python%E5%87%BD%E6%95%B0%E7%BC%96%E7%A8%8B2-0/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">python函数编程2.0</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -1815,7 +1824,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="python面向对象和网络编程2-0" data-title="python面向对象和网络编程和并发编程2.0" data-url="http://yjpn.top/2022/07/12/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/"></div>
+	<div class="ds-thread" data-thread-key="python面向对象和网络编程2-0" data-title="python面向对象和网络编程和并发编程2.0" data-url="http://yjpn.top/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -1838,7 +1847,7 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yjpn.top/2022/07/12/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/", 
+    url: "http://yjpn.top/2022/07/13/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2-0/", 
     sourceId: "python面向对象和网络编程2-0",
     productKey: "ture",
     target: "cloud-tie-wrapper"
@@ -1871,7 +1880,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 SpiderMan
+    		&copy; 2023 SpiderMan
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -2007,6 +2016,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux服务_项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习Mysql</a>
               </li>
             
             <div class="clearfix"></div>
